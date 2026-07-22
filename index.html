@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sai Tele — AI/ML Student & Python Developer. Portfolio showcasing projects, skills, and certifications.">
+    <meta name="keywords" content="Sai Tele, AI, Machine Learning, Python Developer, Portfolio, Web Development">
+    <meta name="author" content="Sai Tele">
+
+    <meta property="og:title" content="Sai Tele — Portfolio">
+    <meta property="og:description" content="AI/ML Student & Python Developer showcasing projects, skills, and certifications.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saitele325.github.io/portfolio/">
+
+    <title>Sai Tele — Portfolio</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== LOADING SCREEN ========== -->
+    <div id="loader">
+        <div class="loader__ring">
+            <div class="loader__ring-inner"></div>
+            <span class="loader__text">ST</span>
+        </div>
+    </div>
+
+    <!-- ========== SCROLL PROGRESS BAR ========== -->
+    <div id="scroll-progress"></div>
+
+    <!-- ========== CURSOR GLOW ========== -->
+    <div id="cursor-glow"></div>
+
+    <!-- ========== PARTICLE CANVAS ========== -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ========== NAVBAR ========== -->
+    <header id="navbar">
+        <div class="navbar__container">
+            <a href="#hero" class="navbar__logo">Portfolio</a>
+
+            <nav class="navbar__links">
+                <a href="#hero" class="navbar__link active">Profile</a>
+                <a href="#about" class="navbar__link">About</a>
+                <a href="#skills" class="navbar__link">Skills</a>
+                <a href="#projects" class="navbar__link">Projects</a>
+                <a href="#contact" class="navbar__link">Contact</a>
+            </nav>
+
+            <a href="https://www.linkedin.com/in/sai-tele-6827273a9" target="_blank" rel="noopener noreferrer" class="navbar__linkedin">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+
+            <button id="hamburger" class="navbar__hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="navbar__mobile-menu">
+            <a href="#hero" class="navbar__mobile-link">Profile</a>
+            <a href="#about" class="navbar__mobile-link">About</a>
+            <a href="#skills" class="navbar__mobile-link">Skills</a>
+            <a href="#projects" class="navbar__mobile-link">Projects</a>
+            <a href="#contact" class="navbar__mobile-link">Contact</a>
+            <a href="https://www.linkedin.com/in/sai-tele-6827273a9" target="_blank" rel="noopener noreferrer" class="navbar__mobile-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                LinkedIn
+            </a>
+        </div>
+    </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main>
+
+        <!-- ========== HERO SECTION ========== -->
+        <section id="hero" class="hero">
+            <div class="hero__container">
+                <div class="hero__content reveal-up">
+                    <p class="hero__greeting">Hello, I'm</p>
+                    <h1 class="hero__name">Sai Tele</h1>
+                    <p class="hero__tagline">
+                        <span id="typing-text"></span><span class="typing-cursor">|</span>
+                    </p>
+                    <p class="hero__description">
+                        An AI/ML student passionate about building intelligent systems and crafting clean, efficient code. I love turning ideas into reality through Python and modern web technologies.
+                    </p>
+                    <div class="hero__buttons">
+                        <a href="#projects" class="btn btn--primary">Projects</a>
+                        <a href="Professional_Resume_Template.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Resume</a>
+                    </div>
+                    <div class="hero__social">
+                        <a href="https://www.instagram.com/obsidiann.vx/" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="Instagram">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/saitele325" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="GitHub">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sai-tele-6827273a9" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="LinkedIn">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="mailto:saitele325@gmail.com" class="hero__social-link" aria-label="Email">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero__image-wrapper reveal-right">
+                    <div class="hero__image-glow"></div>
+                    <div class="hero__image-frame">
+                        <img src="sai.jpeg" alt="Sai Tele - AI/ML Student and Python Developer" class="hero__image" id="hero-profile-img">
+                        <div class="hero__image-fallback">
+                            <span class="hero__image-fallback-initials">ST</span>
+                            <span class="hero__image-fallback-label">AI/ML Student</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero__blob hero__blob--1"></div>
+                <div class="hero__blob hero__blob--2"></div>
+                <div class="hero__blob hero__blob--3"></div>
+            </div>
+        </section>
+
+        <!-- ========== ABOUT SECTION ========== -->
+        <section id="about" class="about">
+            <div class="section__container">
+                <h2 class="section__title reveal-up">About Me</h2>
+                <p class="section__subtitle reveal-up">Get to know me better</p>
+
+                <div class="about__grid">
+                    <div class="about__image-wrapper reveal-left">
+                        <div class="about__image-glow"></div>
+    
+                    </div>
+
+                    <div class="about__text reveal-right"align="left">
+                        <p style="text-align: left;">
+                            I'm <strong>Sai Tele</strong>, a passionate AI/ML student at RSM Polytechnic. I thrive on building intelligent systems and exploring the frontiers of artificial intelligence. With a strong foundation in Python and modern web technologies, I enjoy turning complex problems into elegant, efficient solutions.
+                        </p>
+                        <p>
+                            My journey in tech is driven by curiosity and a relentless desire to learn. Whether it's crafting machine learning models, building responsive web interfaces, or experimenting with new AI tools — I'm always up for a challenge.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about__traits">
+                    <div class="trait-card reveal-up">
+                        <div class="trait-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                <path d="M6 12v5c3 3 12 3 12 0v-5"></path>
+                            </svg>
+                        </div>
+                        <h3 class="trait-card__title">Student</h3>
+                        <p class="trait-card__text">Always learning, always growing in the field of AI & ML.</p>
+                    </div>
+
+                    <div class="trait-card reveal-up" style="animation-delay: 0.1s;">
+                        <div class="trait-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"></path>
+                                <circle cx="12" cy="15" r="2"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="trait-card__title">AI Enthusiast</h3>
+                        <p class="trait-card__text">Fascinated by intelligent systems and the future of AI.</p>
+                    </div>
+
+                    <div class="trait-card reveal-up" style="animation-delay: 0.2s;">
+                        <div class="trait-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="trait-card__title">Python Developer</h3>
+                        <p class="trait-card__text">Crafting clean, efficient code with Python as my primary language.</p>
+                    </div>
+
+                    <div class="trait-card reveal-up" style="animation-delay: 0.3s;">
+                        <div class="trait-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <h3 class="trait-card__title">Problem Solver</h3>
+                        <p class="trait-card__text">Breaking down complex challenges into manageable solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SKILLS SECTION ========== -->
+        <section id="skills" class="skills">
+            <div class="section__container">
+                <h2 class="section__title reveal-up">My Skills</h2>
+                <p class="section__subtitle reveal-up">Technologies & tools I work with</p>
+
+                <div class="skills__grid">
+
+                    <!-- Python -->
+                    <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2C6.48 2 2 6 2 11c0 2.8 1.5 5.3 3.8 6.8L4 22l4.5-2c1.3.4 2.7.5 3.5.5 5.52 0 10-3.5 10-7.5S17.52 2 12 2z"></path>
+                                <path d="M8 8h3v3H8z"></path>
+                                <path d="M13 8h3v3h-3z"></path>
+                                <path d="M8 13h3v3H8z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">Python</h3>
+                    </div>
+
+                    <!-- C -->
+                    <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">C</h3>
+                    </div>
+
+                    <!-- HTML -->
+                    <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                                <line x1="14" y1="4" x2="10" y2="20"></line>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">HTML</h3>
+                    </div>
+
+                    <!-- CSS -->
+                    <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 2l1.5 16L12 22l6.5-4L20 2H4z"></path>
+                                <path d="M12 2v18"></path>
+                                <path d="M4 6h16"></path>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">CSS</h3>
+                    </div>
+
+                    <!-- JavaScript
+                    <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"></path>
+                                <path d="M9 12l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">JavaScript</h3>
+                    </div> -->
+
+                    <!-- Git -->
+                    <!-- <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="18" cy="18" r="3"></circle>
+                                <circle cx="6" cy="6" r="3"></circle>
+                                <path d="M6 21V9a9 9 0 0 0 9 9"></path>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">Git</h3>
+                    </div> -->
+
+                    <!-- GitHub -->
+                    <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">GitHub</h3>
+                    </div>
+
+                    <!-- VS Code -->
+                    <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 3L7 12l10 9V3z"></path>
+                                <line x1="17" y1="3" x2="7" y2="12"></line>
+                                <line x1="7" y1="12" x2="17" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">VS Code</h3>
+                    </div>
+
+                    <!-- AI -->
+                    <!-- <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z"></path>
+                                <path d="M8 14s-4 2-4 6h16c0-4-4-6-4-6"></path>
+                                <circle cx="9" cy="8" r="0.5" fill="currentColor"></circle>
+                                <circle cx="15" cy="8" r="0.5" fill="currentColor"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">AI</h3>
+                    </div> -->
+
+                    <!-- Machine Learning -->
+                    <!-- <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2v4"></path>
+                                <path d="M12 18v4"></path>
+                                <path d="M4.93 4.93l2.83 2.83"></path>
+                                <path d="M16.24 16.24l2.83 2.83"></path>
+                                <path d="M2 12h4"></path>
+                                <path d="M18 12h4"></path>
+                                <path d="M4.93 19.07l2.83-2.83"></path>
+                                <path d="M16.24 7.76l2.83-2.83"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">Machine Learning</h3>
+                    </div> -->
+
+                    <!-- Prompt Engineering -->
+                    <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                <line x1="8" y1="10" x2="16" y2="10"></line>
+                                <line x1="8" y1="14" x2="13" y2="14"></line>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">Prompt Engineering</h3>
+                    </div>
+
+                    <!-- OpenAI -->
+                    <!-- <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">OpenAI</h3>
+                    </div> -->
+
+                    <!-- Microsoft AI -->
+                    <!-- <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="8" height="8"></rect>
+                                <rect x="13" y="3" width="8" height="8"></rect>
+                                <rect x="3" y="13" width="8" height="8"></rect>
+                                <rect x="13" y="13" width="8" height="8"></rect>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">Microsoft AI</h3>
+                    </div> -->
+
+                    <!-- Responsive Design -->
+                    <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">Responsive Design</h3>
+                    </div>
+
+                    <!-- Basic SQL -->
+                    <div class="skill-card reveal-up">
+                        <div class="skill-card__icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
+                        </div>
+                        <h3 class="skill-card__name">Basic SQL</h3>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== EDUCATION SECTION ========== -->
+        <section id="education" class="education">
+            <div class="section__container">
+                <h2 class="section__title reveal-up">Education</h2>
+                <p class="section__subtitle reveal-up">My academic journey</p>
+
+                <div class="timeline">
+                    <div class="timeline__item reveal-up">
+                        <div class="timeline__marker">
+                            <div class="timeline__dot"></div>
+                            <div class="timeline__line"></div>
+                        </div>
+                        <div class="timeline__card">
+                            <span class="timeline__badge">Current</span>
+                            <h3 class="timeline__title">Diploma in AI & ML</h3>
+                            <p class="timeline__school">RSM Polytechnic</p>
+                            <p class="timeline__date">2023 — Present</p>
+                            <p class="timeline__description">
+                                Pursuing a Diploma in Artificial Intelligence and Machine Learning, gaining hands-on experience with Python, machine learning algorithms, data analysis, and AI-driven solutions. Actively working on projects that apply real-world AI concepts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CERTIFICATIONS SECTION ========== -->
+        <section id="certifications" class="certifications">
+            <div class="section__container">
+                <h2 class="section__title reveal-up">Certifications</h2>
+                <p class="section__subtitle reveal-up">Professional achievements</p>
+
+                <div class="certifications__grid">
+
+                    <div class="cert-card reveal-up">
+                        <div class="cert-card__image">
+                            <img src="infosys_dte.jpg" alt="Sequential Digital Circuits Certificate" loading="lazy">
+                        </div>
+                        <div class="cert-card__body">
+                            <h3 class="cert-card__title">Sequential Digital Circuits</h3>
+                            <p class="cert-card__issuer">Infosys Springboard</p>
+                            <a href="dte.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--small">View Certificate</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card reveal-up" style="animation-delay: 0.1s;">
+                        <div class="cert-card__image">
+                            <img src="infosys_dbms.jpg" alt="Infosys Springboard Certificate" loading="lazy">
+                        </div>
+                        <div class="cert-card__body">
+                            <h3 class="cert-card__title">Database Management System</h3>
+                            <p class="cert-card__issuer">Udemy</p>
+                            <a href="infosysDBMS.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--small">View Certificate</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card reveal-up" style="animation-delay: 0.2s;">
+                        <div class="cert-card__image">
+                            <img src="claude.jpg" alt="NPTEL Certification" loading="lazy">
+                        </div>
+                        <div class="cert-card__body">
+                            <h3 class="cert-card__title">Claude Antrhopic</h3>
+                            <p class="cert-card__issuer">Anthropic</p>
+                            <a href="claude.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--small">View Certificate</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card reveal-up" style="animation-delay: 0.3s;">
+                        <div class="cert-card__image">
+                            <img src="assets/certificates/infosys-dbms.jpg" loading="lazy">
+                        </div>
+                        <div class="cert-card__body">
+                            <h3 class="cert-card__title">UPCOMING</h3>
+                            <p class="cert-card__issuer">---</p>
+                            <a href="assets/certificates/infosys-dbms.jpg" target="_blank" rel="noopener noreferrer" class="btn btn--small">Upcoming</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PROJECTS SECTION ========== -->
+        <section id="projects" class="projects">
+            <div class="section__container">
+                <h2 class="section__title reveal-up">Projects</h2>
+                <p class="section__subtitle reveal-up">Featured work and experiments</p>
+
+                <div class="projects__grid">
+
+                    <!-- Project 1 -->
+                    <div class="project-card reveal-up" align="center">
+                        <div class="project-card__image">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3 class="project-card__title" style="margin-left: 20px;">Portfolio Website</h3>
+                        <p class="project-card__description" style="margin-left: 20px; margin-right: 20px;">Modern, responsive portfolio with futuristic design showcasing skills and projects.</p>
+                        <div class="project-card__tech">
+                            <span class="project-card__badge" style="margin-left: 20px;">HTML</span>
+                            <span class="project-card__badge">CSS</span>
+                            <span class="project-card__badge">JavaScript</span>
+                        </div>
+                        <div class="project-card__links" style="margin-left: 20px; margin-bottom: 0px;">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 --
+                    <div class="project-card reveal-up" style="animation-delay: 0.1s;">
+                        <div class="project-card__image">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="project-card__title" style="margin-left: 20px;">Interactive Learning Hub</h3>
+                        <p class="project-card__description" style="margin-left: 20px; margin-right: 20px;">Web-based platform for interactive learning with engaging educational content.</p>
+                        <div class="project-card__tech">
+                            <span class="project-card__badge" style="margin-left: 20px;">HTML</span>
+                            <span class="project-card__badge">CSS</span>
+                            <span class="project-card__badge">JavaScript</span>
+                        </div>
+                        <div class="project-card__links">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 --
+                    <div class="project-card reveal-up" style="animation-delay: 0.2s;">
+                        <div class="project-card__image">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="project-card__title">Submission Management App</h3>
+                        <p class="project-card__description">Application for managing and tracking submissions efficiently and seamlessly.</p>
+                        <div class="project-card__tech">
+                            <span class="project-card__badge">Python</span>
+                            <span class="project-card__badge">Web Technologies</span>
+                        </div>
+                        <div class="project-card__links">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 --
+                    <div class="project-card reveal-up" style="animation-delay: 0.3s;">
+                        <div class="project-card__image">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="10" r="0.5" fill="currentColor"></circle>
+                                <circle cx="8" cy="10" r="0.5" fill="currentColor"></circle>
+                                <circle cx="16" cy="10" r="0.5" fill="currentColor"></circle>
+                            </svg>
+                        </div>
+                        <h3 class="project-card__title">AI Chatbot</h3>
+                        <p class="project-card__description">Intelligent chatbot powered by OpenAI for natural language conversations.</p>
+                        <div class="project-card__tech">
+                            <span class="project-card__badge">Python</span>
+                            <span class="project-card__badge">OpenAI</span>
+                            <span class="project-card__badge">AI</span>
+                        </div>
+                        <div class="project-card__links">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 --
+                    <div class="project-card reveal-up" style="animation-delay: 0.4s;">
+                        <div class="project-card__image">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3 class="project-card__title">Student Management System</h3>
+                        <p class="project-card__description">System for managing student data efficiently with database integration.</p>
+                        <div class="project-card__tech">
+                            <span class="project-card__badge">Python</span>
+                            <span class="project-card__badge">SQL</span>
+                        </div>
+                        <div class="project-card__links">
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn--small">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>-->
+        </section>
+
+        <!-- ========== RESUME SECTION ========== -->
+        <section id="resume" class="resume">
+            <div class="section__container">
+                <h2 class="section__title reveal-up">Resume</h2>
+                <p class="resume__description reveal-up">
+                    Download my resume to learn more about my experience, education, and technical skills.
+                </p>
+                <div class="resume__buttons reveal-up">
+                    <a href="Professional_Resume_Template.pdf" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        Preview Resume
+                    </a>
+                    <a href="Professional_Resume_Template.pdf" download class="btn btn--secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT SECTION ========== -->
+        <section id="contact" class="contact">
+            <div class="section__container">
+                <h2 class="section__title reveal-up">Contact</h2>
+                <p class="section__subtitle reveal-up">Let's connect</p>
+
+                <div class="contact__grid">
+                    <div class="contact__info reveal-left">
+                        <a href="mailto:saitele325@gmail.com" class="contact__info-link">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>saitele325@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sai-tele-6827273a9" target="_blank" rel="noopener noreferrer" class="contact__info-link">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/saitele325" target="_blank" rel="noopener noreferrer" class="contact__info-link">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.instagram.com/obsidiann.vx/" target="_blank" rel="noopener noreferrer" class="contact__info-link">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+
+                    <form id="contact-form" class="contact__form reveal-right" action="#" novalidate>
+                        <div class="contact__form-group">
+                            <input type="text" id="contact-name" name="name" class="contact__input" placeholder=" " required>
+                            <label for="contact-name" class="contact__label">Name</label>
+                        </div>
+                        <div class="contact__form-group">
+                            <input type="email" id="contact-email" name="email" class="contact__input" placeholder=" " required>
+                            <label for="contact-email" class="contact__label">Email</label>
+                        </div>
+                        <div class="contact__form-group">
+                            <input type="text" id="contact-subject" name="subject" class="contact__input" placeholder=" " required>
+                            <label for="contact-subject" class="contact__label">Subject</label>
+                        </div>
+                        <div class="contact__form-group">
+                            <textarea id="contact-message" name="message" class="contact__input contact__textarea" rows="5" placeholder=" " required></textarea>
+                            <label for="contact-message" class="contact__label">Message</label>
+                        </div>
+                        <button type="submit" class="btn btn--primary contact__submit">
+                            <span>Send Message</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer id="footer" class="footer">
+        <div class="footer__container">
+            <p class="footer__text">Sai Tele — AI/ML Student</p>
+
+            <div class="footer__social">
+                <a href="https://www.instagram.com/obsidiann.vx/" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://github.com/saitele325" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/sai-tele-6827273a9" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="mailto:saitele325@gmail.com" class="footer__social-link" aria-label="Email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+            <p class="footer__copy">&copy; <span id="current-year"></span> Sai Tele. All rights reserved.</p>
+
+            <a href="#hero" class="footer__back-to-top" aria-label="Back to top">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="particles.js"></script>
+    <script src="scroll.js"></script>
+    <script src="navbar.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
